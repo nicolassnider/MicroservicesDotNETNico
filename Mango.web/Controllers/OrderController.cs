@@ -1,6 +1,7 @@
 ﻿using Mango.web.Models;
 using Mango.web.Service.Iservice;
 using Mango.web.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace Mango.web.Controllers
             _orderService = orderService;
         }
 
+        [Authorize]
         public IActionResult OrderIndex()
         {
             return View();
